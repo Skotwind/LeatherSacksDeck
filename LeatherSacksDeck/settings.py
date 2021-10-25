@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     # locals
     'slaves.apps.SlavesConfig',
+
+
 ]
 
 MIDDLEWARE = [

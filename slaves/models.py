@@ -19,9 +19,15 @@ class Skill(models.Model):
     class Meta:
         abstract = True
 
+    def __str__(self):
+        return f"{self.title}"
+
 
 class HardSkill(Skill):
     value = models.FloatField(editable=False, default=1)
+
+    def __str__(self):
+        return f"{self.title}"
 
 
 class SoftSkill(Skill):
@@ -42,3 +48,6 @@ class Slave(models.Model):
     warden = models.ForeignKey('self', on_delete=models.DO_NOTHING, null=True, blank=True)
     hard_skills = models.ManyToManyField(HardSkill)
     soft_skills = models.ManyToManyField(SoftSkill)
+
+    def __str__(self):
+        return f"{self.name} {self.sur_name}"
