@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-gp*925&(8l)rh96!l74k1a5y)@bc!p3g38e^^m)u#k6+vxdrvd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['skotwind.pythonanywhere.com', '*']
 
@@ -155,3 +155,5 @@ CORS_ALLOW_METHODS = [
     "POST",
     "PUT",
 ]
+
+SECURE_SSL_REDIRECT = True
