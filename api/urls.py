@@ -11,7 +11,7 @@ urlpatterns = [
     path('workers/', WorkerAPIView.as_view()),
     path('managers/<int:pk>', ManagerDetail.as_view()),
     path('workers/<int:pk>', WorkerDetail.as_view()),
-    path('docs/', include_docs_urls(title='Random User API')),
+    path('', include_docs_urls(title='Random User API')),
     path('schema/', schema_view),
     path('swagger-docs/', schema_view),
 ]
