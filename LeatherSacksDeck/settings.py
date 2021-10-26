@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-gp*925&(8l)rh96!l74k1a5y)@bc!p3g38e^^m)u#k6+vxdrvd
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['skotwind.pythonanywhere.com']
+# ALLOWED_HOSTS = ['skotwind.pythonanywhere.com']
 
 # Application definition
 
