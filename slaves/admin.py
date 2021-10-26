@@ -3,9 +3,19 @@ from django.contrib import admin
 from .models import *
 
 
-@admin.register(Slave)
-class WorkerAdmin(admin.ModelAdmin):
-    list_display = ('name', 'sur_name', 'position', 'warden')
+@admin.register(Manager)
+class ManagerAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+
+
+@admin.register(Worker)
+class ManagerAdmin(admin.ModelAdmin):
+    list_display = ('title', 'warden')
+
+
+@admin.register(UserInfo)
+class InfoAdmin(admin.ModelAdmin):
+    list_display = ('name', 'sur_name')
 
 
 @admin.register(HardSkill)
