@@ -6,13 +6,13 @@ from slaves.models import *
 class HardSkillSerializer(serializers.ModelSerializer):
     class Meta:
         model = HardSkill
-        fields = ['title', 'description']
+        fields = ['title', ]
 
 
 class SoftSkillSerializer(serializers.ModelSerializer):
     class Meta:
         model = SoftSkill
-        fields = ['title', 'description']
+        fields = ['title',]
 
 
 class InfoSerializer(serializers.ModelSerializer):
