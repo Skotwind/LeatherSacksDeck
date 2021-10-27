@@ -177,7 +177,7 @@ def with_prob(prob):
 
 class ProbableList(list):
     def __init__(self, *args, prob=100, **kwargs):
-        super().__init__(*args, prob=100, **kwargs)
+        super().__init__(*args, **kwargs)
         self.prob = prob
 
     def get(self):
