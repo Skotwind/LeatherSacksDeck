@@ -46,4 +46,4 @@ class ManagerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Manager
-        fields = ('id', 'title', 'info', 'count', 'children_count')
+        fields = ('id', 'title', 'info', 'count', 'children', 'children_count')
