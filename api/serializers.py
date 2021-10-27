@@ -32,7 +32,7 @@ class WorkerSerializer(serializers.ModelSerializer):
 class ManagerSerializer(serializers.ModelSerializer):
     info = InfoSerializer(many=False, read_only=True)
     children = serializers.SerializerMethodField()
-    count = serializers.SerializerMethodField()
+    children_count = serializers.SerializerMethodField()
     id = serializers.SerializerMethodField()
 
     def get_id(self, obj):
@@ -41,9 +41,9 @@ class ManagerSerializer(serializers.ModelSerializer):
     def get_children(self, obj):
         return [WorkerSerializer(i).data for i in Worker.objects.filter(warden=obj.pk)]
 
-    def get_count(self, obj):
+    def get_children_count(self, obj):
         return len(Worker.objects.filter(warden=obj.pk))
 
     class Meta:
         model = Manager
-        fields = ('id', 'title', 'info', 'count', 'children')
+        fields = ('id', 'title', 'info', 'count', 'children_count')

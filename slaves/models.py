@@ -1,8 +1,8 @@
 from django.db import models
 
 GENDER = [
-    ('m', 'male'),
-    ('f', 'female'),
+    ('male', 'male'),
+    ('female', 'female'),
     ('h', 'helicopter'),
 ]
 
