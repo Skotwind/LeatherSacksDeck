@@ -9,12 +9,19 @@ class HardSkillSerializer(serializers.ModelSerializer):
         fields = ['title', 'description']
 
 
+class SoftSkillSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SoftSkill
+        fields = ['title', 'description']
+
+
 class InfoSerializer(serializers.ModelSerializer):
     hard_skills = HardSkillSerializer(many=True, read_only=True)
+    soft_skills = SoftSkillSerializer(many=True, read_only=True)
 
     class Meta:
         model = UserInfo
-        fields = ['name', 'sur_name', 'age', 'birthday', 'gender', 'experience', 'height', 'weight', 'hard_skills']
+        fields = ['name', 'sur_name', 'age', 'birthday', 'gender', 'experience', 'height', 'weight', 'hard_skills', 'soft_skills', ]
 
 
 class WorkerSerializer(serializers.ModelSerializer):
@@ -46,4 +53,4 @@ class ManagerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Manager
-        fields = ('id', 'title', 'info',  'children', 'children_count')
+        fields = ('id', 'title', 'info', 'children', 'children_count')
